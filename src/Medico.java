@@ -2,7 +2,7 @@ package src;
 
 import java.util.Date;
 
-public class Medico extends Usuario {
+public class Medico extends Usuario implements Especialista{
     private String areaEspecializada;
     private String crm;
     
@@ -27,7 +27,7 @@ public class Medico extends Usuario {
         this.crm = crm;
     }
 
-    void atender(){
+    public void atender(){
         System.out.println(String.format("O medico %s esta atendendo, aguarde o seu horario" , getNome()));
     }
 
