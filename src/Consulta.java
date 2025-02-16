@@ -1,49 +1,36 @@
 package src;
 
-
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Consulta {
 
     private Paciente paciente;
     private String especialidade;
     private Medico medico;
-    private LocalDateTime dataHora;
+    private Date data;
 
-    public Consulta (Paciente paciente, String especialidade, Medico medico, LocalDatatime dataHora) {
+    public Consulta (Paciente paciente, String especialidade, Medico medico, Date data) {
         this.paciente = paciente;
         this.especialidade = especialidade;
         this.medico= medico;
-        this.dataHora = dataHora;
-        
+        this.data = data;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
-    }
-    public String getEspecialidade() {
-        return especialidade;
-    }
-    public Medico getMedico() {
-        return medico;
-    }
-    public LocalDateTime getDataHora() {
-        return dataHora;
+    public Date getData() {
+        return data;
     }
 
-    public void setDataHora(LocalDateTime dataHora) {
-        this.dataHora = dataHora;
-
+    public void setData(Date data) {
+        this.data = data;
     }
+    
     public void exibirDetalhes() {
-
         System.out.println("Consulta marcada:");
         System.out.println("Paciente: " + paciente.getNome());
         System.out.println("Especialidade: " + especialidade);
         System.out.println("Médico: " + medico.getNome());
-        System.out.println("Data e horário: " + dataHora);
+        System.out.println("Data e horário: " + data);
     }
 
 
 }
-

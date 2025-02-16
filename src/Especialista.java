@@ -1,7 +1,5 @@
 package src;
 
 public interface Especialista {
-    String getEspecialidade();
-    String getNome();
+    public void atender();
 }
-
