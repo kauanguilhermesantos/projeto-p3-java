@@ -9,11 +9,11 @@ import src.models.Consulta;
 import src.models.Paciente;
 import src.models.Usuario;
 
-public class TelaPrincipal extends JFrame {
+public class Gui extends JFrame {
     private List<Usuario> pacientes = new ArrayList<>();
     private List<Consulta> consultas = new ArrayList<>();
 
-    public TelaPrincipal() {
+    public Gui() {
         setTitle("Sistema de Pacientes");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
