@@ -22,20 +22,20 @@ public class TelaPrincipal extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 1));
 
-        JButton btnAdicionarPaciente = new JButton("Adicionar Paciente");
-        JButton btnListarPacientes = new JButton("Listar Pacientes");
-        JButton btnCriarConsulta = new JButton("Criar Consulta");
-        JButton btnVerConsultas = new JButton("Ver Consultas");
+        JButton botaoAdicionarPaciente = new JButton("Adicionar Paciente");
+        JButton botaoListarPacientes = new JButton("Listar Pacientes");
+        JButton botaoCriarConsulta = new JButton("Criar Consulta");
+        JButton botaoVerConsultas = new JButton("Ver Consultas");
 
-        panel.add(btnAdicionarPaciente);
-        panel.add(btnListarPacientes);
-        panel.add(btnCriarConsulta);
-        panel.add(btnVerConsultas);
+        panel.add(botaoAdicionarPaciente);
+        panel.add(botaoListarPacientes);
+        panel.add(botaoCriarConsulta);
+        panel.add(botaoVerConsultas);
 
-        btnAdicionarPaciente.addActionListener(e -> adicionarPaciente());
-        btnListarPacientes.addActionListener(e -> listarPacientes());
-        btnCriarConsulta.addActionListener(e -> criarConsulta());
-        btnVerConsultas.addActionListener(e -> verConsultas());
+        botaoAdicionarPaciente.addActionListener(e -> adicionarPaciente());
+        botaoListarPacientes.addActionListener(e -> listarPacientes());
+        botaoCriarConsulta.addActionListener(e -> criarConsulta());
+        botaoVerConsultas.addActionListener(e -> verConsultas());
 
         add(panel);
     }
@@ -60,9 +60,9 @@ public class TelaPrincipal extends JFrame {
         dialog.add(new JLabel("Acompanhante:"));
         dialog.add(txtAcompanhante);
 
-        JButton btnSalvar = new JButton("Salvar");
+        JButton botaoSalvar = new JButton("Salvar");
 
-        btnSalvar.addActionListener(e -> {
+        botaoSalvar.addActionListener(e -> {
             String nome = txtNome.getText();
             String cpf = txtCpf.getText();
             int idade = Integer.parseInt(txtIdade.getText());
@@ -74,7 +74,7 @@ public class TelaPrincipal extends JFrame {
             dialog.dispose();
         });
 
-        dialog.add(btnSalvar);
+        dialog.add(botaoSalvar);
         dialog.setVisible(true);
     }
 
@@ -94,10 +94,10 @@ public class TelaPrincipal extends JFrame {
         dialog.add(scrollPane, BorderLayout.CENTER);
 
         JPanel panelBotoes = new JPanel();
-        JButton btnRemover = new JButton("Remover Paciente");
-        JButton btnAlterar = new JButton("Alterar Paciente");
+        JButton botaoRemover = new JButton("Remover Paciente");
+        JButton botaoAlterar = new JButton("Alterar Paciente");
 
-        btnRemover.addActionListener(e -> {
+        botaoRemover.addActionListener(e -> {
             int selecao = list.getSelectedIndex();
             if (selecao != -1) {
                 pacientes.remove(selecao);
@@ -105,15 +105,15 @@ public class TelaPrincipal extends JFrame {
             }
         });
 
-        btnAlterar.addActionListener(e -> {
+        botaoAlterar.addActionListener(e -> {
             int selecao = list.getSelectedIndex();
             if (selecao != -1) {
                 alterarPaciente(selecao, modelo);
             }
         });
 
-        panelBotoes.add(btnRemover);
-        panelBotoes.add(btnAlterar);
+        panelBotoes.add(botaoRemover);
+        panelBotoes.add(botaoAlterar);
         dialog.add(panelBotoes, BorderLayout.SOUTH);
         dialog.setVisible(true);
     }
@@ -139,9 +139,9 @@ public class TelaPrincipal extends JFrame {
         dialog.add(new JLabel("Acompanhante:"));
         dialog.add(txtAcompanhante);
 
-        JButton btnSalvar = new JButton("Salvar");
+        JButton botaoSalvar = new JButton("Salvar");
 
-        btnSalvar.addActionListener(e -> {
+        botaoSalvar.addActionListener(e -> {
             paciente.setNome(txtNome.getText());
             paciente.setCpf(txtCpf.getText());
             paciente.setIdade(Integer.parseInt(txtIdade.getText()));
@@ -152,7 +152,7 @@ public class TelaPrincipal extends JFrame {
             dialog.dispose();
         });
 
-        dialog.add(btnSalvar);
+        dialog.add(botaoSalvar);
         dialog.setVisible(true);
     }
 
@@ -181,9 +181,9 @@ public class TelaPrincipal extends JFrame {
         dialog.add(new JLabel("Especialidade:"));
         dialog.add(comboEspecialidades);
 
-        JButton btnSalvar = new JButton("Salvar");
+        JButton botaoSalvar = new JButton("Salvar");
 
-        btnSalvar.addActionListener(e -> {
+        botaoSalvar.addActionListener(e -> {
             int selecao = selectPacientes.getSelectedIndex();
             Paciente paciente = (Paciente) pacientes.get(selecao);
             String especialidade = (String) comboEspecialidades.getSelectedItem();
@@ -194,7 +194,7 @@ public class TelaPrincipal extends JFrame {
             dialog.dispose();
         });
 
-        dialog.add(btnSalvar);
+        dialog.add(botaoSalvar);
         dialog.setVisible(true);
     }
 
@@ -218,10 +218,10 @@ public class TelaPrincipal extends JFrame {
         dialog.add(scrollPane, BorderLayout.CENTER);
 
         JPanel panelBotoes = new JPanel();
-        JButton btnRemover = new JButton("Remover Consulta");
-        JButton btnAlterar = new JButton("Alterar Consulta");
+        JButton botaoRemover = new JButton("Remover Consulta");
+        JButton botaoAlterar = new JButton("Alterar Consulta");
 
-        btnRemover.addActionListener(e -> {
+        botaoRemover.addActionListener(e -> {
             int selecao = lista.getSelectedIndex();
             if (selecao != -1) {
                 consultas.remove(selecao);
@@ -229,15 +229,15 @@ public class TelaPrincipal extends JFrame {
             }
         });
 
-        btnAlterar.addActionListener(e -> {
+        botaoAlterar.addActionListener(e -> {
             int selecao = lista.getSelectedIndex();
             if (selecao != -1) {
                 alterarConsulta(selecao, modelo);
             }
         });
 
-        panelBotoes.add(btnRemover);
-        panelBotoes.add(btnAlterar);
+        panelBotoes.add(botaoRemover);
+        panelBotoes.add(botaoAlterar);
         dialog.add(panelBotoes, BorderLayout.SOUTH);
         dialog.setVisible(true);
     }
@@ -266,9 +266,9 @@ public class TelaPrincipal extends JFrame {
         dialog.add(new JLabel("Especialidade:"));
         dialog.add(selectEspecialidades);
 
-        JButton btnSalvar = new JButton("Salvar");
+        JButton botaoSalvar = new JButton("Salvar");
 
-        btnSalvar.addActionListener(e -> {
+        botaoSalvar.addActionListener(e -> {
             int selectedIndex = selectPacientes.getSelectedIndex();
             Paciente paciente = (Paciente) pacientes.get(selectedIndex);
             String especialidade = (String) selectEspecialidades.getSelectedItem();
@@ -280,7 +280,7 @@ public class TelaPrincipal extends JFrame {
             dialog.dispose();
         });
 
-        dialog.add(btnSalvar);
+        dialog.add(botaoSalvar);
         dialog.setVisible(true);
     }
 }
