@@ -1,3 +1,51 @@
+<h1 align="center">Sistema de Consultas Médicas</h1>
+
+# Sumário
+
+# 1. Sobre o Projeto
+
+# 2. Ferramentas Utilizadas
+
+# 3. Funcionamento
+## 3.1. GUI
+Para a construção da interface gráfica foi utilizado a biblioteca ``Java Swing``.
+```java
+    import javax.swing.*;
+```
+### 3.1.1. Tela Principal
+Para a tela principal é necessário a importação de componentes extras
+```java
+    import javax.swing.*;
+    import javax.swing.border.EmptyBorder;
+
+    import java.awt.*;
+```
+
+A classe ``TelaPrincipal`` é utilizada para a construção da tela inicial da interface gráfica, herdando atributos e métodos da classe ``JFrame`` 
+
+
+```java
+    private JButton botaoCadastrarPaciente;
+    private JButton botaoCriarConsulta;
+    private JButton botaoVerificarPaciente;
+    private JButton botaoVerificarConsulta;
+```
+# Requisitos do Sistema
+
+[ ] CRUD de registros
+
+[ ] Herança
+
+[ ] Polimorfismo
+
+[ ] GUI Swing
+
+[ ] Documentação do programa
+
+[ ] Collections
+
+[ ] Leitura e Escrita de arquivos
+
 # Guia de Comandos Git
 
 ## Clonar Repositósio
